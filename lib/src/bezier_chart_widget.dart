@@ -450,9 +450,17 @@ class BezierChartState extends State<BezierChart>
             },
           );
         } else {
-          final jumpToX = (index * horizontalSpacing) -
-              horizontalPadding / 2 -
-              _keyScroll.currentContext!.size!.width / 2;
+          //PWR 01.09.2022 Adjusted to correct Null Check issue.
+          jumpToX = (index * horizontalSpacing) -
+              horizontalPadding / 2;
+
+          if (_keyScroll.currentContext != null) {
+            if (_keyScroll.currentContext.size != null) {
+              jumpToX = (index * horizontalSpacing) -
+                  horizontalPadding / 2 -
+                  _keyScroll.currentContext!.size!.width / 2;
+            }
+          }
           _scrollController!.jumpTo(jumpToX);
 
           fixedPosition = Offset(
@@ -478,9 +486,14 @@ class BezierChartState extends State<BezierChart>
   }
 
   _checkIfNeedScroll() {
-    if (_contentWidth >
-        _keyScroll.currentContext!.size!.width - horizontalPadding * 2) {
-      _isScrollable = true;
+    //PWR 01.09.2022 Adjusted to correct Null Check issue.
+    if (_keyScroll.currentContext != null) {
+      if (_keyScroll.currentContext.size != null) {
+        if (_contentWidth >
+            _keyScroll.currentContext!.size!.width - horizontalPadding * 2) {
+          _isScrollable = true;
+        }
+      }
     }
   }
 
