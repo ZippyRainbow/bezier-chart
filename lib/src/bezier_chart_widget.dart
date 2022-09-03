@@ -451,11 +451,11 @@ class BezierChartState extends State<BezierChart>
           );
         } else {
           //PWR 01.09.2022 Adjusted to correct Null Check issue.
-          jumpToX = (index * horizontalSpacing) -
+          double jumpToX = (index * horizontalSpacing) -
               horizontalPadding / 2;
 
           if (_keyScroll.currentContext != null) {
-            if (_keyScroll.currentContext.size != null) {
+            if (_keyScroll.currentContext!.size != null) {
               jumpToX = (index * horizontalSpacing) -
                   horizontalPadding / 2 -
                   _keyScroll.currentContext!.size!.width / 2;
@@ -488,7 +488,7 @@ class BezierChartState extends State<BezierChart>
   _checkIfNeedScroll() {
     //PWR 01.09.2022 Adjusted to correct Null Check issue.
     if (_keyScroll.currentContext != null) {
-      if (_keyScroll.currentContext.size != null) {
+      if (_keyScroll.currentContext!.size != null) {
         if (_contentWidth >
             _keyScroll.currentContext!.size!.width - horizontalPadding * 2) {
           _isScrollable = true;
