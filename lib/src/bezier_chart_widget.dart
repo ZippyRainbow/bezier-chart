@@ -461,21 +461,23 @@ class BezierChartState extends State<BezierChart>
                   _keyScroll.currentContext!.size!.width / 2;
             }
           }
-          _scrollController!.jumpTo(jumpToX);
+          if (_scrollController != null) {
+            _scrollController!.jumpTo(jumpToX);
 
-          fixedPosition = Offset(
-              isOnlyOneAxis
-                  ? 0.0
-                  : (index * horizontalSpacing + 2 * horizontalPadding) -
-                      _scrollController!.offset,
-              0.0);
-          _verticalIndicatorPosition = fixedPosition;
-          _onDisplayIndicator(
-            LongPressMoveUpdateDetails(
-              globalPosition: fixedPosition,
-              offsetFromOrigin: fixedPosition,
-            ),
-          );
+            fixedPosition = Offset(
+                isOnlyOneAxis
+                    ? 0.0
+                    : (index * horizontalSpacing + 2 * horizontalPadding) -
+                    _scrollController!.offset,
+                0.0);
+            _verticalIndicatorPosition = fixedPosition;
+            _onDisplayIndicator(
+              LongPressMoveUpdateDetails(
+                globalPosition: fixedPosition,
+                offsetFromOrigin: fixedPosition,
+              ),
+            );
+          }
         }
       }
     }
