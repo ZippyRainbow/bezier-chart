@@ -1,5 +1,5 @@
 import 'package:bezier_chart/bezier_chart.dart';
-import 'package:bezier_chart_example/sample15.dart';
+//import 'package:bezier_chart_example/sample15.dart';
 import 'package:flutter/material.dart';
 import 'package:intl/intl.dart' as intl;
 
@@ -153,12 +153,12 @@ class MyHomePage extends StatelessWidget {
               onTap: () => Navigator.of(context)
                   .push(MaterialPageRoute(builder: (context) => Sample14())),
             ),
-            ListTile(
-              title: Text("Sample 15"),
-              subtitle: Text("Custom Chart Zoom Range"),
-              onTap: () => Navigator.of(context)
-                  .push(MaterialPageRoute(builder: (context) => Sample15())),
-            ),
+            // ListTile(
+            //   title: Text("Sample 15"),
+            //   subtitle: Text("Custom Chart Zoom Range"),
+            //   onTap: () => Navigator.of(context)
+            //       .push(MaterialPageRoute(builder: (context) => Sample15())),
+            // ),
           ],
         ),
       ),
