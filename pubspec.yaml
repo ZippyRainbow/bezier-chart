@@ -1,6 +1,6 @@
 name: bezier_chart
 description: A beautiful bezier line chart widget for flutter that is highly interactive and configurable.
-version: 2.0.6
+version: 2.0.7
 
 homepage: https://aeyrium.com/products/mxtracker/
 repository: https://github.com/aeyrium/bezier-chart
