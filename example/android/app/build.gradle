@@ -25,7 +25,7 @@ apply plugin: 'com.android.application'
 apply from: "$flutterRoot/packages/flutter_tools/gradle/flutter.gradle"
 
 android {
-    namespace "com.runningstars.bezier_chart"
+    namespace("com.running-stars.bezier-chart")
     compileSdkVersion 31
 
     lintOptions {
@@ -37,7 +37,7 @@ android {
             resolutionStrategy { force 'androidx.core:core-ktx:1.6.0' }
         }
         // TODO: Specify your own unique Application ID (https://developer.android.com/studio/build/application-id.html).
-        // applicationId "com.runningstars.bezier_chart"
+        // applicationId "com.running-stars.bezier-chart"
         minSdkVersion 28
         multiDexEnabled true
         targetSdkVersion 28
